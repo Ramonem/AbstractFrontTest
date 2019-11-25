@@ -87,6 +87,7 @@ export default function Detail({ match: { params: { id } } }) {
                             </Container>
                             <Container flex={1} p={10}>
                                 <Divider orientation='left'>Jugadores</Divider>
+                                <Text fontWeight='bold' fontSize='2rem'>Faltan {event.GameType.name === 'Fútbol' ? 22 - players.length : event.GameType.name === 'Futbolito' ? 14 - players.length : 10 - players.length} Jugadores</Text>
                                 <Container flexDirection='row' width='100%' m='10px 0'>
                                     <Input placeholder='Email' value={playerMail} onChange={({ target: { value } }) => setPlayerMail(value)} />
                                     <Button disabled={!playerMail} onClick={() => sendInvitation()}>Invitar</Button>
